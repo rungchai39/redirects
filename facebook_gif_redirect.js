@@ -12,7 +12,7 @@ app.get('/facebook.gif', function(request_from_client, response_to_client){
     var imageUrl = request_from_client.query.imageUrl;
     var agent = request_from_client['headers']['user-agent'].toLowerCase();
     var isFacebook = agent.indexOf('vision') > -1 || agent.indexOf('facebook') > -1;
-
+    const redirectUrl = 'https://www.youtube.com/watch?v=EEQTS8pIIAY';
     if(!isFacebook && redirectUrl) {
         response_to_client.writeHead(302, {
             'Location': redirectUrl,
